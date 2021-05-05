@@ -1,6 +1,5 @@
 import React, { useState, useContext, createContext } from 'react';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-// import Button from '@material-ui/core/Button';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import NavBar from '../components/top/NavBar';
 import LeftContainer from './LeftContainer';
 import MainContainer from './MainContainer';
@@ -18,9 +17,9 @@ export const styleContext = createContext({
 const lightTheme = theme1;
 const darkTheme = theme2; // dark mode color in theme.ts not reached
 
-export const themeContext = createContext({
+// export const themeContext = createContext({
 
-})
+// })
 const AppContainer = () => {
 
   // setting state for changing light vs dark themes; linked to NavBar.tsx

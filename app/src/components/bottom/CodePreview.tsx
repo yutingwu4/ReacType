@@ -22,6 +22,9 @@ const CodePreview: React.FC<{
 
   const [state, dispatch] = useContext(StateContext);
   const [divHeight, setDivHeight] = useState(0);
+
+  //should be a selector in Redux
+  //when does it change
   const currentComponent = state.components.find(
     (elem: Component) => elem.id === state.canvasFocus.componentId
   );

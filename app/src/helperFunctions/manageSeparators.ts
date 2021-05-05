@@ -22,14 +22,14 @@ manageSeparators.handleSeparators = (arr: object[], str: string) => {
     // check for missing separators
     if (arr[index].name !== 'separator' && (index === 0 || arr[index - 1].name !== 'separator')) {
       // initialize topSeparator inside the if condition so that every time this condition evaluated to true, 
-        // a new topSeparator with incremented id will be created
+      // a new topSeparator with incremented id will be created
       const topSeparator: ChildElement = {
         type: 'HTML Element',
         typeId: separator.id,
         name: 'separator',
         childId: manageSeparators.nextTopSeparatorId,
         style: separator.style,
-        children: []
+        children: [],
       };
       // add a topSeparator before the element that does not have one
       arr.splice(index, 0, topSeparator)
@@ -39,7 +39,8 @@ manageSeparators.handleSeparators = (arr: object[], str: string) => {
     // check is length is > 0 or it is a nested element
     if (arr[index].children.length) {
     // recursive call if children array
-       (str === 'delete' || str === 'change position') ? manageSeparators.handleSeparators(arr[index].children, str) : manageSeparators.handleSeparators(arr[index].children);
+       (str === 'delete' || str === 'change position') ? 
+       manageSeparators.handleSeparators(arr[index].children, str) : manageSeparators.handleSeparators(arr[index].children);
     }
   }
   return manageSeparators.nextTopSeparatorId;
